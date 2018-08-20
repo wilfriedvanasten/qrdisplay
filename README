@@ -1,0 +1,8 @@
+QR Display
+==========
+
+A simple program I use to display a WIFI QR code on my 2.7 inch e-paper display.
+
+My code is MIT licensed. In addition this repository contains the files
+for controlling the display provided by waveshare, which I expanded
+a little for my purpose

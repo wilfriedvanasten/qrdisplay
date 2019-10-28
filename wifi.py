@@ -15,8 +15,8 @@ def generate_qr_image(ssid, key):
     qr = qrcode.QRCode(
         version=2,
         error_correction=qrcode.constants.ERROR_CORRECT_L,
-        box_size=5,
-        border=2
+        box_size=4,
+        border=4
     )
     qr.add_data('WIFI:S:{};T:WPA;P:{};;'.format(ssid, key))
     qr.make()

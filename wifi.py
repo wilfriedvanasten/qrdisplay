@@ -70,7 +70,7 @@ def display_ssid_and_key(ssid, key):
     #epd.display_frame(imagedata.IMAGE_BLACK, imagedata.IMAGE_RED)
     epd.sleep()
 
-def create_toggle_code(ssid, key):
+def toggle(ssid, key):
     display_ssid_and_key(ssid, key)
     time.sleep(30)
     display_qr_code(ssid, key)
@@ -83,7 +83,7 @@ def create_event_callback(ssid, key):
         global display_toggle_thread
         if display_toggle_thread is None or not display_toggle_thread.is_alive():
             print("Handling button {} press".format(channel))
-            display_toggle_thread = threading.Thread(target = create_toggle_code, name = "Display toggle", args=(ssid, key))
+            display_toggle_thread = threading.Thread(target = toggle, name = "Display toggle", args=(ssid, key))
             display_toggle_thread.start()
         else:
             print("Already handling {} button press".format(channel))

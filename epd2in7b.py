@@ -296,7 +296,7 @@ class EPD:
             if y + pixel_y < self.height:
                 for pixel_x in range(image_width):
                     if x + pixel_x < self.width:
-                        if pixels[pixel_x, pixel_y] == 0:
+                        if pixels[pixel_x, pixel_y] != 0:
                             effective_x = x + pixel_x
                             effective_y = y + pixel_y
                             frame_buffer[(effective_x + effective_y * self.width) / 8] &= ~(0x80 >> (effective_x % 8))

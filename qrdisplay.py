@@ -33,7 +33,6 @@ def main():
         ssid = config['WIFI']['ssid']
         key = config['WIFI']['key']
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(5, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         wifi.display_qr_code(ssid, key)
         wifi_button = Button(5)
         wifi_button.when_pressed = wifi.create_event_callback(ssid, key)

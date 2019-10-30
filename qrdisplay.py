@@ -21,8 +21,6 @@ def main():
         print("Creating the config file")
         ssid = raw_input("SSID: ")
         key = getpass.getpass("Key: ")
-        moonlight_host = raw_input("Moonlight Host: ")
-        moonlight_arguments = raw_input("Moonlight Stream Arguments: ")
         config['WIFI'] = {
             'ssid': ssid,
             'key': key

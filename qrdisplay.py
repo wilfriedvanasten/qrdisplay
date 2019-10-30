@@ -7,6 +7,7 @@ import os.path as path
 import RPi.GPIO as GPIO
 from gpiozero import Button
 from xdg.BaseDirectory import (save_config_path)
+from datetime import datetime
 import configparser
 import wifi
 
@@ -36,8 +37,15 @@ def main():
         wifi.display_qr_code(ssid, key)
         wifi_button = Button(5)
         wifi_button.when_pressed = wifi.create_event_callback(ssid, key)
+        midnight = True
         while True:
-            time.sleep(30)
+            if midnight:
+                wifi.display_qr_code(ssid, key)
+                # Wait an additional hour to prevent a fast refresh
+                time.sleep(3600)
+            time.sleep(3600)
+            midnight = datetime.now().hour == 0
+
         
 
 if __name__ == '__main__':

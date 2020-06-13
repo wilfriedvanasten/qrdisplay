@@ -2,9 +2,9 @@ import time
 import epd2in7b
 import RPi.GPIO as GPIO
 import qrcode
-import Image
-import ImageFont
-import ImageDraw
+import PIL.Image
+import PIL.ImageFont
+import PIL.ImageDraw
 import textwrap
 import threading
 

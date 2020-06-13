@@ -25,9 +25,9 @@
  #
 
 import epdif
-import PIL.Image
-import PIL.ImageDraw
-import PIL.ImageFont
+import PIL.Image as Image
+import PIL.ImageDraw as ImageDraw
+import PIL.ImageFont as ImageFont
 import RPi.GPIO as GPIO
 
 # Display resolution
